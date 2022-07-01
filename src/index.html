@@ -1,13 +1,29 @@
 <html lang="en-US">
 <head>
   <title>Currency Exchanger</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="index.js"></script>
 </head>
+
 <body>
   <div class="container">
     <h1>Currency Exchanger</h1>
-    <label for="amount">Enter an amount in U.S. dollars</label>
-    <input id="amount" type="text">
+    <div>
+      <label for="amount">Enter an amount in U.S. dollars:</label>
+      <input id="amount" type="text">
+    </div>
+    <div>
+      <label for="currency">Select a currency to convert to:</label><br>
+      <input type="radio" id="currency" value="Euros" checked>Euros<br>
+      <input type="radio" id="currency" value="Pesos" >Mexican Pesos<br>
+      <input type="radio" id="currency" value="HK Dollars" >Hong Kong Dollars<br>
+      <input type="radio" id="currency" value="Rupees" >Indian Rupees<br>
+      <input type="radio" id="currency" value="Krona" >Swedish Krona<br>
+    </div>
     <button class="btn-success" id="convert">Convert</button>
+
+
     <!-- <div class="showPesos"></div>
     <div class="showYen"></div>
     <div class="showRupees"></div>
@@ -15,6 +31,7 @@
     <div class="showEuros"></div>
   </div>
 </body>
+
 </html>
 
 

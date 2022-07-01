@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import currencyExchanger from './js/exchange.js';
+import currencyExchanger from '../js/exchange.js';
 
 
 function clearFields() {
@@ -14,7 +14,7 @@ function clearFields() {
 
 function getElements(response) {
   if (response.data) {
-    $('#descript').text(`${response.conversion_rates.EUR} `);
+    $('#showEuros').text(`${response.conversion_rates.EUR} `);
     // $('#amenities').text(`${response.data[0].activities[0].name}`);
     // $('#amenities').append(`, ${response.data[0].activities[1].name}`);
     // $('#amenities').append(`, ${response.data[0].activities[2].name}`);
@@ -36,7 +36,7 @@ $(document).ready(function() {
   $('#convert').click(function() {
     let input = $('#amount').val();
     clearFields();
-    makeApiCall(park);
+    makeApiCall(input);
   });
 });
 
