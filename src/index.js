@@ -2,11 +2,12 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import Exchange from './js/exchange.js';
 
 $(document).ready(function() {
   $('#convert').click(function() {
-    const city = $('#amount').val();
-    $('#location').val("");
+    const input = $('#amount').val();
+    $('#').val("");
 
     let request = new XMLHttpRequest();
     const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}`;
