@@ -11,16 +11,15 @@ $(document).ready(function() {
     let request = new XMLHttpRequest();
     const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}`;
 
-    function getExchangeRate(response) {
+    function getElements(response) {
       if (response.conversion_rates) {
-        const euros = (1.8 * (response.conversion_rates.EUR - 273) + 32).toFixed(1);
-        const pesos = (1.8 * (response.main.temp_min - 273) + 32).toFixed(1);
-        const yen = (1.8 * (response.main.temp_max - 273) + 32).toFixed(1);
-        const rupees = (1.8 * (response.main.temp_max - 273) + 32).toFixed(1);
-        const won = (1.8 * (response.main.temp_max - 273) + 32).toFixed(1);
+        const euros = (response.conversion_rates.EUR);
+        const pesos = (response.conversion_rates.MXN);
+        const hongKongDollar = (response.conversion_rates.HKD);
+        const rupees = (response.conversion_rates.INR);
+        const krona = (response.conversion_rates.SEK);
 
-        // $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
-        $('.showConversion').text(`The temperature is ` + f  + ` degrees.`);
+        $('.showConversion').text(`The amount in is ` + f  + ` degrees.`);
         
       } else {
         $('.showErrors').text(`There was an error: ${response}`);
@@ -37,12 +36,12 @@ $(document).ready(function() {
     request.open("GET", url, true);
     request.send();
 
-    function getElements(response) {
-      $('.showPesos').text(`The amount in Pesos is ${response.conversion_rates.EUR}`);
-      $('.showYen').text(`The amount in Yen is ${response.main.temp} .`);
-      $('.showRupees').text(`The amount in Rupees is ${response.main.temp} .`);
-      $('.showWon').text(`The amount in Won is ${response.main.temp} .`);
-      $('.showEuros').text(`The amount in Euros is ${response.conversion_rates.EUR} .`);
+    function getExchange(response) {
+      $('.showEuros').text(`The amount in Euros is € ${euros}`);
+      $('.showPesos').text(`The amount in Mexican pesos is ${pesos}$`);
+      $('.showHongKongDollar').text(`The amount in Hong Kong dollars is ${hongKongDollar}$`);
+      $('.showRupees').text(`The amount in Rupees is ₹ ${rupees}`);
+      $('.showKrona').text(`The amount in Swedish Krona is ${krona} kr`);
     }
   });
 });
