@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import currencyExchanger from '../js/exchange.js';
+import currencyExchanger from './js/exchange.js';
 
 
 function clearFields() {

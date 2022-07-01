@@ -10,24 +10,23 @@
   <div class="container">
     <h1>Currency Exchanger</h1>
     <div>
-      <label for="amount">Enter an amount in U.S. dollars:</label>
+      <label for="amount">Enter an amount in U.S. dollars: $</label>
       <input id="amount" type="text">
     </div>
     <div>
       <label for="currency">Select a currency to convert to:</label><br>
-      <input type="radio" id="currency" value="Euros" checked>Euros<br>
-      <input type="radio" id="currency" value="Pesos" >Mexican Pesos<br>
-      <input type="radio" id="currency" value="HK Dollars" >Hong Kong Dollars<br>
-      <input type="radio" id="currency" value="Rupees" >Indian Rupees<br>
-      <input type="radio" id="currency" value="Krona" >Swedish Krona<br>
+      <select class="form-control" id="currency">
+        <option value="Euros">Euros</option>
+        <option value="Pesos">Mexican Pesos</option>
+        <option value="HK Dollars">Hong Kong Dollars</option>
+        <option value="Rupees">Indian Rupees</option>
+        <option value="Krona">Swedish Krona</option>
+      </select>
     </div>
     <button class="btn-success" id="convert">Convert</button>
 
 
-    <!-- <div class="showPesos"></div>
-    <div class="showYen"></div>
-    <div class="showRupees"></div>
-    <div class="showWon"></div> -->
+   
     <div class="showEuros"></div>
   </div>
 </body>
