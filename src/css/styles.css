@@ -27,7 +27,7 @@ h1 {
   }
 
   #amount {
-    width: 125px;
+    width: 200px;
     height: 35px;
     border-radius: 5px;
     font-family: 'Old Standard TT', serif;
@@ -38,7 +38,7 @@ h1 {
   }
 
   #currency {
-    width: 125px;
+    width: 200px;
     height: 35px;
     border-radius: 5px;
     font-family: 'Old Standard TT', serif;
