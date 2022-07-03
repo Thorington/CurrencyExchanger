@@ -1,6 +1,6 @@
 
 export default class exchangeChecker {  
-  static async getExchange(userCurrency) {
+  static async getCurrency(userCurrency) {
     try {
       const response = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD?=${userCurrency}`);
       if (!response.ok) {

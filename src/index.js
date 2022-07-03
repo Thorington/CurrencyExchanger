@@ -32,7 +32,7 @@ $(document).ready(function () {
       }
     }
     async function makeApiCall(userCurrency) {
-      const response = await exchangeChecker.getExchange(userCurrency);
+      const response = await exchangeChecker.getCurrency(userCurrency);
       console.log(response);
       getElements(response);
     }
