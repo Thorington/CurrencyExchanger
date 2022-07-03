@@ -5,13 +5,13 @@ import exchangeChecker from './js/exchanger.js';
 $(document).ready(function () {
   $('#convert').click(function () {
     let userAmount = $('#amount').val();
-    // let userCurrency = $('#currency').val();
+    let userCurrency = $('#currency').val();
     $('#amount').val("");
     $('#currency').val("");
-    $(makeApiCall(userAmount));
+    makeApiCall(userAmount);
 
     let request = new XMLHttpRequest();
-    const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`;
+    const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD?=${userCurrency}`;
 
     request.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -30,14 +30,11 @@ $(document).ready(function () {
         $('.showErrors').text(`There was an error: ${response}`);
       }
     }
-
     async function makeApiCall(userAmount) {
       const response = await exchangeChecker.getExchange(userAmount);
       console.log(response);
       getElements(response);
     }
-
-
   });
 });
 
