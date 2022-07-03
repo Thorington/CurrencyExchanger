@@ -8,20 +8,21 @@ $(document).ready(function () {
     let userCurrency = $('#currency').val();
     $('#amount').val("");
     $('#currency').val("");
-    makeApiCall(userAmount);
+    console.log(makeApiCall(userCurrency));
+   
 
-    let request = new XMLHttpRequest();
-    const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD?=${userCurrency}`;
+    // let request = new XMLHttpRequest();
+    // const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD?=${userCurrency}`;
 
-    request.onreadystatechange = function () {
-      if (this.readyState === 4 && this.status === 200) {
-        const response = JSON.parse(this.responseText);
-        getElements(response);
-      }
-    };
+    // request.onreadystatechange = function () {
+    //   if (this.readyState === 4 && this.status === 200) {
+    //     const response = JSON.parse(this.responseText);
+    //     getElements(response);
+    //   }
+    // };
 
-    request.open("GET", url, true);
-    request.send();
+    // request.open("GET", url, true);
+    // request.send();
 
     function getElements(response) {
       if (response.conversion_rates) {
@@ -30,8 +31,8 @@ $(document).ready(function () {
         $('.showErrors').text(`There was an error: ${response}`);
       }
     }
-    async function makeApiCall(userAmount) {
-      const response = await exchangeChecker.getExchange(userAmount);
+    async function makeApiCall(userCurrency) {
+      const response = await exchangeChecker.getExchange(userCurrency);
       console.log(response);
       getElements(response);
     }
